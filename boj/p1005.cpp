@@ -4,6 +4,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void readContructTime(vector<int>& cT, int N) {
+    for(int i = 1 ; i <= N; i++) {
+        cin >> cT[i];
+    }
+}
+void readGraph(vector<vector<int>>& adj, vector<int>& indegree, int K) {
+    for(int i = 0; i < K; i++) {
+        int src, dest;
+        cin >> src >> dest;
+        indegree[dest]++;
+        adj[src].push_back(dest);
+    }
+}
 
 void solve() {
 
@@ -14,19 +27,15 @@ void solve() {
     vector<bool> visited (N+1, false);
     vector<vector<int>> adj (N+1, vector<int>());
     vector<int> dp (N+1, 0);
-    int maxT;
-    for(int i = 1 ; i <= N; i++) {
-        cin >> constructTime[i];
-    }
-    for(int i = 0; i < K; i++) {
-        int src, dest;
-        cin >> src >> dest;
-        indegree[dest]++;
-        adj[src].push_back(dest);
-    }
+    queue<int> q;
+
+
+    readContructTime(constructTime, N);
+    readGraph(adj, indegree, K);
+
     int target;
     cin >> target;
-    queue<int> q;
+
 
     for(int i = 1; i <= N; i++) {
         if(indegree[i] == 0)  {
