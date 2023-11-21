@@ -25,11 +25,7 @@ bool bfs(int startX, int startY, vector<vector<bool>>& visited, vector<vector<in
         result.push({curP.first, curP.second});
         totalSum += population[curP.first][curP.second];
 
-<<<<<<< HEAD
         for (auto& direction : directions) {
-=======
-        for (auto &direction : directions) {
->>>>>>> origin/main
             int nextX = curP.first + direction[0];
             int nextY = curP.second + direction[1];
 
