@@ -85,7 +85,7 @@ solution 2) prefix sum
 iterate through the array from i = 0 to n-1
 
     for i 
-        res[i] = abs(pre[i-1] - i * nums[i]) + abs(pre[n-1] - pre[i-1] - (n - i) * nums[i])
+        res[i] = abs(pre[i-1] - i * nums[i]) + abs(pre[n-1] - pre[i] - (n - i - 1) * nums[i])
 
 // just make sure when i == 0 and n-1
     logic for index boundary
